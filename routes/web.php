@@ -17,3 +17,11 @@ Route::get('/', function () {
     // return view('welcome');
     return view('index', ['lists' => [1,2,3,4,5,6,7]]);
 });
+
+Route::get('/about', function() {
+    return view('about');
+});
+
+Route::get('/contact', function() {
+    return view('contact');
+});
