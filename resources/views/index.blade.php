@@ -11,8 +11,16 @@
     
   @endcomponent --}}
   @component('components.button', ['title' => 'ارسال'])
-      @slot('title')
-          <u>Submit</u>
-      @endslot
+      {{-- @slot('title')
+          <u>Submit1</u>
+      @endslot --}}
+      <u>Submit1</u>
   @endcomponent
+
+  @btn
+    <u>Submit2</u>
+  @endbtn
+
+  @bold(Garsivaz)
+  
 @endsection
