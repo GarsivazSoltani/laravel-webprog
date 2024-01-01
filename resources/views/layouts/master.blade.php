@@ -7,14 +7,11 @@
   <title>Garsivaz | @yield('title')</title>
 </head>
 <body>
-  <header>
-    Header
-  </header>
+
+  @include('partials.header')
 
   @yield('content')
 
-  <footer>
-    Footer
-  </footer>
+  @include('partials.footer')
 </body>
 </html>
