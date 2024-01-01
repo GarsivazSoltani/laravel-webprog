@@ -7,12 +7,28 @@
   <title>Document</title>
 </head>
 <body>
-  @if ($count === 5)
-    {{$count}} = 5
-  @elseIf($count > 5)
-    {{$count}} > 5
-  @else
-    {{$count}} < 5
-  @endif
+  {{-- @for($i=0; $i<10; $i++)
+    The Current values is {{$i}} <br>
+  @endfor --}}
+  
+  {{-- @foreach ($lists as $list)
+    <li>{{$list}}</li>
+  @endforeach --}}
+
+  {{-- @forelse ($lists as $list)
+    <li>{{$list}}</li>
+  @empty
+    <p>No List</p>
+  @endforelse --}}
+
+  @php
+    $i = 5;
+  @endphp
+  @while ($i < 10)
+    The current value is {{$i}} <br>
+    @php
+      $i++;
+    @endphp
+  @endwhile
 </body>
 </html>

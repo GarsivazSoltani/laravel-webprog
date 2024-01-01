@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('welcome');
-    return view('index', ['count' => 10]);
+    return view('index', ['lists' => [1,2,3,4,5,6,7]]);
 });
