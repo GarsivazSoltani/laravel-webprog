@@ -7,10 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <?php echo $name ?>
-  <br>
-  <u>
-    {{$name}}
-  </u>
+  @if ($count === 5)
+    {{$count}} = 5
+  @elseIf($count > 5)
+    {{$count}} > 5
+  @else
+    {{$count}} < 5
+  @endif
 </body>
 </html>
