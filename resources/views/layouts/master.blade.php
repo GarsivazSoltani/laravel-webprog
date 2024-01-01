@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Garsivaz | @yield('title')</title>
-</head>
+  <title>Garsivaz | @section('title') Index Page @show</title></head>
 <body>
 
   @include('partials.header')
