@@ -29,3 +29,18 @@ Route::get('/contact', function() {
 Route::get('/course/{course}/{id?}', function ($course, $id='44') {
     return $course . "-" . $id;
 })->name('course');
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/', function () {
+        return 'Admin';
+    });
+    Route::get('/course', function () {
+        return 'Course';
+    });
+    Route::get('/user', function () {
+        return 'User';
+    });
+    Route::get('/comment', function () {
+        return 'Comment';
+    });
+});
