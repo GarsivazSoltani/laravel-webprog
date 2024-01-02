@@ -13,23 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@home');
 
-Route::get('/about', 'App\Http\Controllers\HomeController@about')->name('about');
+Route::get('/{id}', 'App\Http\Controllers\HomeController@home');
 
-Route::get('/contact', function() {
-    return view('contact');
-});
+// Route::get('/about', 'App\Http\Controllers\HomeController@about')->name('about');
 
-Route::get('/course/{course}/{id?}', function ($course, $id='44') {
-    return $course . "-" . $id;
-})->name('course');
+// Route::get('/contact', function() {
+//     return view('contact');
+// });
 
-Route::prefix('/admin')->group(function () {
-    Route::get('/','App\Http\Controllers\Admin\AdminController@admin');
-    Route::get('/course', 'App\Http\Controllers\Admin\AdminController@course');
-    Route::get('/user', 'App\Http\Controllers\Admin\AdminController@user');
-    Route::get('/comment', function () {
-        return 'Comment';
-    });
-})->name('admin');
+// Route::get('/course/{course}/{id?}', function ($course, $id='44') {
+//     return $course . "-" . $id;
+// })->name('course');

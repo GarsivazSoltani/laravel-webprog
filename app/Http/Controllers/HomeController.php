@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home(){
+    public function home(Request $request, $id){
+        dd($request->all(), $id);
         return view('index');
-    }
-    public function about(){
-        return view('about');
     }
 }
