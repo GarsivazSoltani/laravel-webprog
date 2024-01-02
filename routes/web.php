@@ -25,3 +25,7 @@ Route::get('/about', function() {
 Route::get('/contact', function() {
     return view('contact');
 });
+
+Route::get('/course/{course}/{id?}', function ($course, $id='44') {
+    return $course . "-" . $id;
+});
