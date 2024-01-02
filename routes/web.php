@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/about', function() {
     return view('about');
-});
+})->name('about');
 
 Route::get('/contact', function() {
     return view('contact');
@@ -28,4 +28,4 @@ Route::get('/contact', function() {
 
 Route::get('/course/{course}/{id?}', function ($course, $id='44') {
     return $course . "-" . $id;
-});
+})->name('course');
