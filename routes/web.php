@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('index', ['lists' => [1,2,3,4,5,6,7]]);
-});
+Route::get('/', 'App\Http\Controllers\HomeController@home');
 
-Route::get('/about', function() {
-    return view('about');
-})->name('about');
+Route::get('/about', 'App\Http\Controllers\HomeController@about')->name('about');
 
 Route::get('/contact', function() {
     return view('contact');
@@ -31,16 +26,10 @@ Route::get('/course/{course}/{id?}', function ($course, $id='44') {
 })->name('course');
 
 Route::prefix('/admin')->group(function () {
-    Route::get('/', function () {
-        return 'Admin';
-    });
-    Route::get('/course', function () {
-        return 'Course';
-    });
-    Route::get('/user', function () {
-        return 'User';
-    });
+    Route::get('/','App\Http\Controllers\Admin\AdminController@admin');
+    Route::get('/course', 'App\Http\Controllers\Admin\AdminController@course');
+    Route::get('/user', 'App\Http\Controllers\Admin\AdminController@user');
     Route::get('/comment', function () {
         return 'Comment';
     });
-});
+})->name('admin');
