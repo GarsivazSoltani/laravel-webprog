@@ -14,20 +14,16 @@ class HomeController extends Controller
     // }
 
     public function home(){
-        // $article = Article::find(1)->update([
-        //     'title' => 'Article One'
-        // ]);
-
-        // $article = Article::find(1);
-        // $article->update([
-        //     'title' => 'Article 1'
-        // ]);
-
-        $id = 13;
-        $article = Article::updateOrCreate(['id' => $id], [
-            'title' => 'Article 13',
-            'body' => 'Lorem ipsum'
-        ]);
+        // $article = Article::find(1)->delete();
+        // $article = Article::where('id', 2)->delete();
+        // $article = Article::destroy([1,4,6]);
+        // $article = Article::where('id', 7)->delete();
+        // $article = Article::find(7);
+        // $article = Article::withTrashed()->find(7);
+        // $article = Article::onlyTrashed()->get();
+        // $article = Article::onlyTrashed()->find(7);
+        // $article->restore();
+        $article = Article::where('id', 7)->forceDelete();
 
         dd($article);
         // return view('index', compact('articles'));
