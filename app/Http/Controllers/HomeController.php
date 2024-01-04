@@ -24,9 +24,31 @@ class HomeController extends Controller
         // $articles = Article::where('id', '<', 3)->get();
         // $articles = Article::first();
         // $articles = Article::orderBy('title', 'DESC')->get();
-        $articles = Article::take(2)->get();
+        // $articles = Article::take(2)->get();
 
-        dd($articles);
+        // $article = new Article();
+        // $article->title = 'Article 5';
+        // $article->body ='Lorem ipsum';
+        // $article->save();
+
+        // $article = new Article([
+        //     'title' => 'Article 6',
+        //     'body' => 'Lorem ipsum'
+        // ]);
+        // $article->save();
+
+        // $article = Article::create([
+        //     'title' => 'Article 7',
+        //     'body' => 'Lorem ipsum'
+        // ]);
+        
+        $id = 12;
+        $article = Article::firstOrCreate(['id' => $id], [
+            'title' => 'Article' . $id,
+            'body' => 'Lorem ipsum'
+        ]);
+
+        dd($article);
 
         // return view('index', compact('articles'));
     }
