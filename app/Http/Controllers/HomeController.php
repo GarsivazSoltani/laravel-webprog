@@ -23,7 +23,12 @@ class HomeController extends Controller
         // $article = Article::onlyTrashed()->get();
         // $article = Article::onlyTrashed()->find(7);
         // $article->restore();
-        $article = Article::where('id', 7)->forceDelete();
+        // $article = Article::where('id', 7)->forceDelete();
+        // Global Scope
+        // $article = Article::all();
+        // $article = Article::withoutGlobalScope('status')->get();
+        // Local Scope
+        $article = Article::status(0)->get();
 
         dd($article);
         // return view('index', compact('articles'));
