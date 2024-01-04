@@ -19,10 +19,15 @@ class HomeController extends Controller
         //     ->where('id', 4)
         //     ->delete();
         
-        $articles = Article::all();
+        // $articles = Article::all();
+        // $articles = Article::find([1, 3]);
+        // $articles = Article::where('id', '<', 3)->get();
+        // $articles = Article::first();
+        // $articles = Article::orderBy('title', 'DESC')->get();
+        $articles = Article::take(2)->get();
 
-        // dd($result);
+        dd($articles);
 
-        return view('index', compact('articles'));
+        // return view('index', compact('articles'));
     }
 }
