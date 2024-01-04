@@ -18,13 +18,22 @@ class Article extends Model
     //     });
     // }
 
-    public function scopeStatus($query, $status){
-        $query->where('status', $status);
-    }
+    // public function scopeStatus($query, $status){
+    //     $query->where('status', $status);
+    // }
 
     // protected $table = 'articles_Garsi';
     // public $timestamps = false;
     protected $fillable = ['title', 'body'];
     // protected $guarded = ['title', 'body'];
 
+    // Accessore
+    public function getTitleAttribute($value){
+        return strtolower($value);
+    }
+
+    // mutator
+    public function setTitleAttribute($value){
+        $this->attributes['title'] = strtoupper($value);
+    }
 }
