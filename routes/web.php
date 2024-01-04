@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/{id}', 'App\Http\Controllers\HomeController@home');
+Route::get('/', 'App\Http\Controllers\HomeController@home');
 
 // Route::get('/about', 'App\Http\Controllers\HomeController@about')->name('about');
 
