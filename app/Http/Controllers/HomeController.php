@@ -14,42 +14,22 @@ class HomeController extends Controller
     // }
 
     public function home(){
-        // $result = 
-        //     DB::table('articles')
-        //     ->where('id', 4)
-        //     ->delete();
-        
-        // $articles = Article::all();
-        // $articles = Article::find([1, 3]);
-        // $articles = Article::where('id', '<', 3)->get();
-        // $articles = Article::first();
-        // $articles = Article::orderBy('title', 'DESC')->get();
-        // $articles = Article::take(2)->get();
-
-        // $article = new Article();
-        // $article->title = 'Article 5';
-        // $article->body ='Lorem ipsum';
-        // $article->save();
-
-        // $article = new Article([
-        //     'title' => 'Article 6',
-        //     'body' => 'Lorem ipsum'
+        // $article = Article::find(1)->update([
+        //     'title' => 'Article One'
         // ]);
-        // $article->save();
 
-        // $article = Article::create([
-        //     'title' => 'Article 7',
-        //     'body' => 'Lorem ipsum'
+        // $article = Article::find(1);
+        // $article->update([
+        //     'title' => 'Article 1'
         // ]);
-        
-        $id = 12;
-        $article = Article::firstOrCreate(['id' => $id], [
-            'title' => 'Article' . $id,
+
+        $id = 13;
+        $article = Article::updateOrCreate(['id' => $id], [
+            'title' => 'Article 13',
             'body' => 'Lorem ipsum'
         ]);
 
         dd($article);
-
         // return view('index', compact('articles'));
     }
 }
