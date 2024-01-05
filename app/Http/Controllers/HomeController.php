@@ -14,7 +14,8 @@ class HomeController extends Controller
     // }
 
     public function home(){
+        $articles = Article::all();
         // dd($article);
-        return view('index');
+        return view('index', compact('articles'));
     }
 }

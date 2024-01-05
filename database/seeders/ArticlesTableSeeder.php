@@ -13,12 +13,14 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = \Faker\Factory::create();
-        foreach(range(1, 10) as $item){
-            Article::create([
-                'title' => $faker->text(50),
-                'body' => $faker->paragraph(rand(10, 20))
-            ]);
-        }
+        Article::factory(15)->create();
+        // factory(Article::class, 15);
+        // $faker = \Faker\Factory::create();
+        // foreach(range(1, 10) as $item){
+        //     Article::create([
+        //         'title' => $faker->text(50),
+        //         'body' => $faker->paragraph(rand(10, 20))
+        //     ]);
+        // }
     }
 }
