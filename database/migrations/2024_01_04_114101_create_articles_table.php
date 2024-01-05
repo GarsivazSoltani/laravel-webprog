@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100)->comment('my title');
+            $table->string('title', 100)->comment('عنوان');
             $table->text('body');
             $table->boolean('status')->default(0);
             $table->timestamps();

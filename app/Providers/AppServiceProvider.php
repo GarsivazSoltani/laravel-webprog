@@ -21,10 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::component('components.button', 'btn');
-        Blade::directive('bold', function($text) {
-            return '<b> '. $text . '</b>';
-        });
+        // Blade::component('components.button', 'btn');
+        // Blade::directive('bold', function($text) {
+        //     return '<b> '. $text . '</b>';
+        // });
         Schema::defaultStringLength(191);
     }
 }
